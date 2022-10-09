@@ -1,0 +1,36 @@
+#Lista_01_exercicio_01
+- Programa pede que diga se é homem ou mulher
+- Inseri um loop para testar se o valor é valido referente à homem e mulher
+- Pega os valores e guarda nas variaveis
+- Faz o teste e acumula nas variaveis
+- Imprime o peso no final do programa
+
+#Lista_01_exercicio_02
+- Programa pede o peso do peixe
+- Começa com a variavel 0 no excesso e na multa e isso é importante porque no final a gente vai colocar elas se for 0
+- A variavel excesso e multa podem alterar dependendo do resultado do testo
+- No final imprime o resultado do multa e do excesso dependendo do resultado do teste no caso do peso do pexie de 50 KG
+
+#Lista_01_exercicio_03
+- Programa pede a informação de quanto vc ganha por hora e quantas horas vc trabalha no mes e acumula em variaveis
+- Calcula as 2 entradas e coloca na variavel salario
+- Faz o calculo com a variavel criada salario e acumla o IR INSS SINDICATO SAL_LIQUIDO
+- Imprimipe o valor armazenado nas variaveis 
+
+#Lista_02_exercicio_01
+- O programa pede um valor entre 10 e 600
+- Entra em um loop com while até o usuário inserir o valor correto pedido pelo programa
+- Extrai os valores das notas e acumula em variaves
+- Executar os testes para imprimir cada valor de variável no caso as notas que armazenamos nas variáveis
+
+#Lista_02_exercicio_02
+- Programa pede uma entrada de numero inteiro
+- faz o resto com resto da divisão por 2
+- Se for resto da divisão por 2 igual a 0 então par(print)
+- E senão for par logo é impar(print)
+
+#Lista_02_exercicio_03
+- Programa pede a entrada de um numero
+- faz o teste com o resto da divisão por 1
+- Imprime o resultado se tiver então inteiro senão é decimal
+

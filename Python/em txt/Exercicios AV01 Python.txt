@@ -1,0 +1,205 @@
+''' - Lista de Exercício Estácio 
+- Paradigmas de Linguagens de Programação em Python 
+- Aluno : Thiago Henrique Rezende de Oliveira
+- Matrícula: 201201387061 
+
+################################################################################
+
+- Lista01_Exercício 01 
+- Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas:
+a. Para homens: (72.7*h) - 58
+b. Para mulheres: (62.1*h) - 44.7 '''
+
+homem_ou_mulher = 0
+
+while homem_ou_mulher != 1 and homem_ou_mulher != 2:    
+    homem_ou_mulher = int(input('Selecione: 1- Sexo Masculino ou 2- Sexo Feminino: '))    
+
+h = float(input('Qual altura: '))
+peso = float(input('Qual peso: '))
+
+if homem_ou_mulher == 1:
+	peso_ideal = (72.7*h) - 58
+else:
+	peso_ideal = (62.1*h) - 44.7
+
+if peso < peso_ideal:
+	print('Abaixo do peso ideal!')
+elif peso == peso_ideal:
+	print('Dentro do peso ideal!')
+else:
+	print('Acima do peso ideal!')
+print ('Peso: %.2f / Peso ideal: %.2f' %(peso, peso_ideal))
+
+
+###############################################################################################
+- Lista01_Exercício 02 
+
+'''João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar 
+o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior 
+que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) 
+deve pagar uma multa de R$ 4,00 por quilo excedente. João precisa que você faça 
+um programa que leia a variável peso (peso de peixes) e calcule o excesso. 
+Gravar na variável excesso a quantidade de quilos além do limite e na 
+variável multa o valor da multa que João deverá pagar. 
+Imprima os dados do programa com as mensagens adequadas.
+'''
+
+peso_de_peixes = float(input("Peso: "))
+excesso = 0
+multa = 0
+
+if peso_de_peixes >= 50:
+    excesso = peso_de_peixes - 50
+    multa = excesso * 4
+
+print("Excesso: %.2f" %excesso)
+print("Multa: %.2f" %multa)
+
+################################################################################################
+
+- Lista01_Exercício 03
+
+'''Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. 
+Calcule e mostre o total do seu salário no referido mês, 
+sabendo-se que são descontados 11% para o Imposto de Renda, 
+8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
+
+a. salário bruto.
+b. quanto pagou ao INSS.
+c. quanto pagou ao sindicato.
+d. o salário líquido.
+e. calcule os descontos e o salário líquido, conforme a tabela abaixo: 
+    + Salário Bruto : R$ 
+    - IR (11%) : R$ 
+    - INSS (8%) : R$ 
+    - Sindicato ( 5%) : R$ 
+    = Salário Liquido : R$
+
+Obs.: Salário Bruto - Descontos = Salário Líquido.'''
+
+sal_hora = float(input("Quanto você ganha por hora? "))
+horas_trab_mes = int(input("Quantas horas você trabalha no mês? "))
+salario = sal_hora * horas_trab_mes
+
+ir = salario * 0.11
+inss = salario * 0.08
+sindicato = salario * 0.05
+sal_liquido = salario - ir - inss - sindicato
+
+print("Salário bruto: %.2f" %salario, "\nIR: %.2f" %ir, "\nINSS: %.2f" %inss, "\nSindicato %.2f" %sindicato, "\nSalário Liquido: %.2f" %sal_liquido)
+
+#####################################################################################
+
+- Lista02_Exercício 01 
+
+'''Faça um Programa para um caixa eletrônico. O programa deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O programa não deve se preocupar com a quantidade de notas existentes na máquina.
+a. Exemplo 1: Para sacar a quantia de 256 reais, o programa fornece duas notas de 100, uma nota de 50, uma nota de 5 e uma nota de 1;
+b. Exemplo 2: Para sacar a quantia de 399 reais, o programa fornece três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.'''
+
+
+valor_saque = int(input("Informe o valor que deseja sacar (valor maior que R$10 e menor que 600): "))
+while(valor_saque < 10 or valor_saque > 600):
+    print('Valor inválido! Digite um valor maior que R$10 e menor que R$600.')
+    valor_saque = int(input('Digite o valor para saque: '))
+
+notas_de_100 = int((valor_saque - (valor_saque%100))/100)
+notas_de_50 = int((valor_saque%100)/50)
+notas_de_10 = int(((valor_saque%50)/10))
+notas_de_5 = int(((valor_saque%10)/5))
+notas_de_1 = int(((valor_saque%5)/1))
+
+if(notas_de_100 == 1):
+    print(f'{notas_de_100} nota de R$100')
+elif(notas_de_100 > 1):
+    print(f'{notas_de_100} notas de R$100')
+if(notas_de_50 == 1):
+    print(f'{notas_de_50} nota de R$50')
+elif(notas_de_50 > 1):
+    print(f'{notas_de_50} notas de R$50')
+if(notas_de_10 == 1):
+    print(f'{notas_de_10} nota de R$10')
+elif(notas_de_10 > 1):
+    print(f'{notas_de_10} notas de R$10')
+if(notas_de_5 == 1):
+    print(f'{notas_de_5} nota de R$5')
+elif(notas_de_5 > 1):
+    print(f'{notas_de_5} notas de R$5')
+if (notas_de_1 == 1):
+    print(f'{notas_de_1} nota de R$1')
+elif (notas_de_1 > 1):
+    print(f'{notas_de_1} notas de R$1')
+
+###############################################################################################
+
+- Lista02_Exercício 02 
+
+'''Faça um Programa que peça um número inteiro e determine se ele é par ou ímpar.'''
+
+numero = int(input('Digite um número para saber se é par ou impar: '))
+resto = numero % 2
+
+if resto == 0:
+    print('Número é par')
+else:
+    print('Número é impar')
+
+########################################################################################
+
+- Lista01_Exercício 03 
+
+'''Faça um Programa que peça um número e informe se o número é inteiro ou decimal.'''
+
+numero = float(input('Digite um número: '))
+if numero % 1 == 0:
+    print('Inteiro')
+else:
+    print('Decimal')
+
+####################################################################################
+
+
+
+
+############## COMENTARIOS DOS EXERCICIOS #################################
+
+
+#Lista_01_exercicio_01
+- Programa pede que diga se é homem ou mulher
+- Inseri um loop para testar se o valor é valido referente à homem e mulher
+- Pega os valores e guarda nas variaveis
+- Faz o teste e acumula nas variaveis
+- Imprime o peso no final do programa
+
+#Lista_01_exercicio_02
+- Programa pede o peso do peixe
+- Começa com a variavel 0 no excesso e na multa e isso é importante porque no final a gente vai colocar elas se for 0
+- A variavel excesso e multa podem alterar dependendo do resultado do testo
+- No final imprime o resultado do multa e do excesso dependendo do resultado do teste no caso do peso do pexie de 50 KG
+
+#Lista_01_exercicio_03
+- Programa pede a informação de quanto vc ganha por hora e quantas horas vc trabalha no mes e acumula em variaveis
+- Calcula as 2 entradas e coloca na variavel salario
+- Faz o calculo com a variavel criada salario e acumla o IR INSS SINDICATO SAL_LIQUIDO
+- Imprimipe o valor armazenado nas variaveis 
+
+#Lista_02_exercicio_01
+- O programa pede um valor entre 10 e 600
+- Entra em um loop com while até o usuário inserir o valor correto pedido pelo programa
+- Extrai os valores das notas e acumula em variaves
+- Executar os testes para imprimir cada valor de variável no caso as notas que armazenamos nas variáveis
+
+#Lista_02_exercicio_02
+- Programa pede uma entrada de numero inteiro
+- faz o resto com resto da divisão por 2
+- Se for resto da divisão por 2 igual a 0 então par(print)
+- E senão for par logo é impar(print)
+
+#Lista_02_exercicio_03
+- Programa pede a entrada de um numero
+- faz o teste com o resto da divisão por 1
+- Imprime o resultado se tiver então inteiro senão é decimal
+
+
+###########################################################
+
